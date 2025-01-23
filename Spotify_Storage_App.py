@@ -6,8 +6,8 @@ from datetime import datetime
 
 index = 0
 # Replace with your credentials
-CLIENT_ID = '12b6377122d64be9b3a7a92610f2b5de'
-CLIENT_SECRET = '2a10bc17e8d744b7bb7b4bd2e48d8057'
+CLIENT_ID = 'YOUR_CLIENT_ID'
+CLIENT_SECRET = 'YOUR_CLIENT_SECRET'
 REDIRECT_URI = 'http://localhost:/callback' 
 
 # Create an OAuth2 instance
@@ -22,7 +22,7 @@ current_favs = sp.current_user_top_tracks(limit = 20, time_range = "short_term")
 
 current_date = datetime.now().strftime("%Y-%m-%d")
 
-connection_string = "Driver=SQL Server Native Client 11.0; Server=TANNERSPC; Database=dbSpotifyData; Trusted_Connection=yes;"
+connection_string = "Driver=SQL Server Native Client 11.0; Server=YOUR_SERVER; Database=dbSpotifyData; Trusted_Connection=yes;"
 
 with pyodbc.connect(connection_string) as cnxn:
         with cnxn.cursor() as cursor:
